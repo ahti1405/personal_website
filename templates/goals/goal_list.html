@@ -1,0 +1,44 @@
+{% extends '_base.html'%}
+
+{% block title %}Goals{% endblock title %}
+
+{% block content %}
+<h1>Goals</h1>
+
+<a href="{% url 'goal_create' %}">Add a goal</a>
+
+<div class="year-goal">
+    <h2>A year goal:</h2>
+    <ul>
+        {% for goal in goals %}
+        {% if goal.is_year %}
+        <li><a href="{% url 'goal_detail' goal.pk %}">{{ goal.title }}</a></li>
+        {% endif %}
+        {% endfor %}
+    </ul>
+    
+</div>
+
+<div class="month-goal">
+    <h2>A month goal:</h2>
+    <ul>
+        {% for goal in goals %}
+        {% if goal.is_month %}
+        <li><a href="{% url 'goal_detail' goal.pk %}">{{ goal.title }}</a></li>
+        {% endif %}
+        {% endfor %}
+    </ul>
+</div>
+
+<div class="week-goal">
+    <h2>A week goal:</h2>
+    <ul>
+        {% for goal in goals %}
+        {% if goal.is_week %}
+        <li><a href="{% url 'goal_detail' goal.pk %}">{{ goal.title }}</a></li>
+        {% endif %}
+        {% endfor %}
+    </ul>
+</div>
+
+{% endblock content %}

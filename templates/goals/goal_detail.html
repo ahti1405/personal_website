@@ -1,0 +1,10 @@
+{% extends '_base.html'%}
+
+{% block title %}{{ goal.title }}{% endblock title %}
+
+{% block content %}
+<p>{{ goal.title }}</p>
+<p>{{ goal.description }}</p>
+<a href="{% url 'goal_update' goal.pk %}">Update</a>
+<a href="{% url 'goal_delete' goal.pk %}">Delete</a>
+{% endblock content %}
