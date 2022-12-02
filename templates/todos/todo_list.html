@@ -1,0 +1,31 @@
+{% extends '_base.html'%}
+
+{% block title %}Tasks{% endblock title %}
+
+{% block content %}
+<h1>Todo list</h1>
+<a href="{% url 'todo_create' %}">Add task</a>
+
+<div class="main-task">
+    <h2>Main Tasks:</h2>
+    <ul>
+        {% for todo in todos %}
+        {% if todo.is_main %}
+        <li><a href="{% url 'todo_detail' todo.pk %}">{{ todo.title }}</a></li>
+        {% endif %}
+        {% endfor %}
+    </ul>
+    
+</div>
+
+<div class="secondary-task">
+    <h2>Secondary Tasks:</h2>
+    <ul>
+        {% for todo in todos %}
+        {% if not todo.is_main %}
+        <li><a href="{% url 'todo_detail' todo.pk %}">{{ todo.title }}</a></li>
+        {% endif %}
+        {% endfor %}
+    </ul>
+</div>
+{% endblock content %}

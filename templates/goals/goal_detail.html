@@ -5,6 +5,6 @@
 {% block content %}
 <p>{{ goal.title }}</p>
 <p>{{ goal.description }}</p>
-<a href="{% url 'goal_update' goal.pk %}">Update</a>
-<a href="{% url 'goal_delete' goal.pk %}">Delete</a>
+<a class="btn btn-success" href="{% url 'goal_update' goal.pk %}">Update</a>
+<a class="btn btn-danger" href="{% url 'goal_delete' goal.pk %}">Delete</a>
 {% endblock content %}

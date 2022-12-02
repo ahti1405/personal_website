@@ -21,15 +21,15 @@ class GoalDetailView(DetailView):
 class GoalCreateView(CreateView):
     model = Goal
     fields = '__all__'
-    success_url = reverse_lazy('goals_list')
+    success_url = reverse_lazy('goal_list')
 
 
 class GoalUpdateView(UpdateView):
     model = Goal
     fields = '__all__'
-    success_url = reverse_lazy('goals_list')
+    success_url = reverse_lazy('goal_list')
 
 
 class GoalDeleteView(DeleteView):
     model = Goal
-    success_url = reverse_lazy('goals_list')
+    success_url = reverse_lazy('goal_list')

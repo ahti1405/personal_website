@@ -7,7 +7,7 @@
     {% csrf_token %}
     <p>Are you sure you want to delete?</p>
     <button class="btn btn-danger" type="submit">Yes</button>
-    <a class="btn btn-secondary" href="{% url 'goal_detail' goal.pk %}">Cancel</a>
+    <a class="btn btn-secondary" href="{% url 'todo_detail' todo.pk %}">Cancel</a>
 </form>
 
 {% endblock content %}
